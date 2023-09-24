@@ -1,0 +1,22 @@
+.app-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-container {
+    width: 1000px;
+    height: 600px;
+}
+
+/* mat-card-content {
+    height: 100%;
+}
+
+mat-tab-group {
+    height: 100%;
+}
+
+.mat-mdc-tab-body-wrapper {
+    height: 100%;
+} */

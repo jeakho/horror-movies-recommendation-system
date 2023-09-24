@@ -1,0 +1,16 @@
+<div class="movie-title">
+    <img [src]="movie.imageUrl" alt="Movie Poster">
+    <div class="movie-details">
+        <h2>{{ movie.title }}</h2>
+        <div class="movie-rating" *ngIf="movie.rating">
+            <span 
+                style="font-size: 1.3em; color: green"
+                *ngIf="movie.predictedRating"
+            >{{ movie.predictedRating | number:'1.0-1'}}/</span>{{ movie.rating }}
+        </div>
+    </div>
+    <div *ngIf="movie.cosineSimilarity" class="similarity-coefficient">
+        <div class="label">cos. sim:</div>
+        {{ movie.cosineSimilarity | number:'1.0-6' }}
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<header>
+    <div class="full searchbar-wrapper">
+          <div class="searchbar-container">
+            <app-movie-search
+              (onMovieSelect)="onMovieSelected($event)"
+            ></app-movie-search>
+          </div>
+    </div>
+</header>
+
+<div class="container">
+    <fieldset class="options-panel">
+      <legend>Options</legend>
+      <form [formGroup]="optionsFormGroup" class="options-form">
+        <label for="models">Select a model:</label>
+        <select id="models" formControlName="modelType" class="model-select">
+          <option *ngFor="let model of availableModels; index as i" [value]="i">{{ model }}</option>
+        </select>
+
+        <div style="margin-top: 10px">
+          <span>No. films: </span>
+          <input type="number" formControlName="noMovies" min="1" max="10">
+        </div>
+
+        <footer class="options-form-footer">
+          <button (click)="applySettingsChanges()">Apply</button>
+        </footer>
+      </form>
+    </fieldset>
+    <div class="movies-container">
+      <h2 style="text-align: center; font-weight: bold;">Movies with the most similar plots:</h2>
+      <div class="movie-list-wrapper">
+        <app-movies-list
+          [movies]="topNMovies$ | async"
+          (onMovieSelected)="selectedMovie$.next($event)"
+        ></app-movies-list>
+      </div>
+    </div>
+</div>
+
+<div *ngIf="this.isLoading$ | async" class="full-absolute">
+  <app-loading-progress></app-loading-progress>
+</div>

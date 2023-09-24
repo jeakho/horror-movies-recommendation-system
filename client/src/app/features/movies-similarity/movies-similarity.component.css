@@ -1,0 +1,64 @@
+.searchbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar-container {
+    width: 60%;
+    margin-top: 15px;
+}
+
+
+.container {
+    /* height: 100%; */
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.options-panel {
+    width: 30%;
+    height: 130px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+.movies-container {
+    width: 70%;
+    padding: 10px 5px 10px 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-list-wrapper {
+    height: 350px;
+    padding: 0px;
+}
+
+app-movies-list {
+    flex-grow: 1;
+}
+
+.model-select {
+    width: 100%;
+}
+
+.options-form {
+    height: 100%;
+    position: relative;
+}
+
+.options-form-footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+app-movie-title {
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title class="title flex content-centered">{{ data.title }}</h1>
+<div mat-dialog-content>
+  <div class="movie-container">
+    <div class="movie-image-container">
+      <img [src]="data.imageUrl" alt="{{ data.title }}" class="movie-image" />
+    </div>
+    <div class="movie-info-container">
+      <div class="movie-rating" *ngIf="data.rating">
+        <span style="font-weight: 700">Rating: </span>
+        <span *ngIf="data.predictedRating" style="color: green; font-size: 1.2em;">
+          {{ data.predictedRating | number:'1.0-1' }}/</span>{{ data.rating }}
+      </div>
+      <div class="movie-genres">
+        <span style="font-weight: 700">Genres: </span>
+        {{ data.genres.join(', ') }}
+      </div>
+      <div class="movie-release_date">
+        <span style="font-weight: 700">Release date: </span>
+        {{ data.releaseDate }}
+      </div>
+      <div class="movie-countries">
+        <span style="font-weight: 700">Countries: </span>
+        {{ data.countries.join(', ') }}
+      </div>
+      <div class="movie-directors">
+        <span style="font-weight: 700">Directors: </span>
+        {{ data.directors.join(', ') }}
+      </div>
+      <div class="movie-annotation">
+        <span style="font-weight: 700">Annotation: </span>
+        <br>
+        {{ data.annotation }}
+      </div>
+    </div>
+  </div>
+
+  <h1 style="text-align: center; font-weight: bold;">Reviews</h1>
+  <div class="movie-reviews-container">
+    <ol class="movie-reviews">
+      <li *ngFor="let review of data.reviews" class="movie-review">{{ review }}</li>
+    </ol>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.searchbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar-container {
+    width: 60%;
+    margin-top: 15px;
+}
+
+.movies-container {
+    margin: 10px;
+}
+
+.movie-list-wrapper {
+    height: 350px;
+    /* padding-top: 50px; */
+}
+
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 50%; */
+}

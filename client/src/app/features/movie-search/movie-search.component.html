@@ -1,0 +1,13 @@
+<mat-form-field class="movie-searchbar" appearance="outline">
+    <mat-label>Search for a movie...</mat-label>
+
+    <input matInput 
+        [matAutocomplete]="moviesGroup" 
+        [ngModel]="model.movieTitle"
+        (ngModelChange)="onInputChange($event)"
+    >
+
+    <mat-autocomplete #moviesGroup="matAutocomplete" (optionSelected)="onMovieSelect.next($event.option.value)" [displayWith]="displayTitle">
+        <mat-option *ngFor="let movieTitle of suggestedMovieTitles$ | async" [value]="movieTitle">{{ movieTitle.title }}</mat-option>
+    </mat-autocomplete>
+</mat-form-field>

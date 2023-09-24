@@ -1,0 +1,29 @@
+<header>
+    <div class="full searchbar-wrapper">
+          <div class="searchbar-container">
+            <app-movie-search
+              (onMovieSelect)="selectedMovie$.next($event)"
+            ></app-movie-search>
+          </div>
+    </div>
+</header>
+
+<div class="movies-container">
+  <div class="order-container">
+    <button mat-icon-button (click)="sortingOrderChanged$.next(true)">
+      <mat-icon>swap_vert</mat-icon>
+    </button>
+    {{ sortingOrderLabel$ | async }}
+  </div>
+  <div class="movie-list-wrapper">
+      <app-movies-list
+          [movies]="topNMovies$ | async"
+          (onMovieSelected)="selectedMovie$.next($event)"
+          (onListEnd)="scrollReachedEnd$.next($event)"
+      ></app-movies-list>
+  </div>
+</div>
+
+<div *ngIf="this.isLoading$ | async" class="full-absolute">
+  <app-loading-progress></app-loading-progress>
+</div>

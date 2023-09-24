@@ -1,0 +1,12 @@
+<div class="component-wrapper" (scroll)="scroll$.next($event)">
+    <div class="full-absolute no-items-container" *ngIf="!movies?.length; else movies_list">
+        <div>No items to display...</div>
+    </div>
+    <ng-template #movies_list>
+        <app-movie-list-item
+            *ngFor="let movie of movies || []"
+            [movie]="movie"
+            (click)="onClick(movie)"
+        ></app-movie-list-item>
+    </ng-template>
+</div>

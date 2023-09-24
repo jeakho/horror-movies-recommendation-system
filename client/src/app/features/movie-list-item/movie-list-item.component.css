@@ -1,0 +1,30 @@
+.movie-title {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+.movie-title img {
+  width: 40px;
+  height: 65px;
+  margin-right: 10px;
+}
+
+.movie-details {
+  flex: 1;
+}
+
+.movie-details h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.movie-rating {
+  font-size: 16px;
+}
+
+.similarity-coefficient {
+  font-style: italic;
+  color: green;
+}

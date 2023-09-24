@@ -1,0 +1,50 @@
+.title {
+    text-align: center;
+    height: 60px;
+    font-weight: bold;
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px 20px 20px;
+}
+
+.movie-image-container {
+    width: 40%;
+    padding-right: 2rem;
+}
+
+.movie-image {
+    width: 100%;
+    height: auto;
+}
+
+.movie-info-container {
+    width: 60%;
+}
+
+.movie-rating,
+.movie-release_date,
+.movie-annotation,
+.movie-countries,
+.movie-genres,
+.movie-directors,
+.movie-reviews {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.movie-annotation,
+.movie-review {
+    text-align: justify;
+}
+
+.movie-review {
+    margin-bottom: 10px;
+}
+
+.movie-reviews-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
