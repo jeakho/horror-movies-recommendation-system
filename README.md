@@ -28,7 +28,7 @@ Before you begin, ensure you have the following prerequisites installed:
 
 ### Server side
 1. Clone this repository to your local machine: `https://github.com/jeakho/horror-movies-recommendation-system.git`.
-2. Navigate to the server directory: `cd serve`.
+2. Navigate to the server directory: `cd server`.
 3. Unzip the archive `db.zip` into the folder `db`.
 4. Start the server: `python rest_service.py`.
 5. The server should now be running and accessible at the specified API endpoint (e.g., `http://localhost:5000`).
